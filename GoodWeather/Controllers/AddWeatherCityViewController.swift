@@ -9,17 +9,20 @@ import UIKit
 import SnapKit
 
 class AddWeatherCityViewController: UIViewController {
-    let textField: UITextField = {
+    lazy var cityNameTextField: UITextField = {
         let textField = UITextField()
+        textField.borderStyle = .bezel
         
         return textField
     }()
     
-    let saveButton: UIButton = {
+    lazy var saveButton: UIButton = {
         var config = UIButton.Configuration.filled()
         config.title = "Save"
         
         let button = UIButton(configuration: config)
+        button.addTarget(self, action: #selector(didTapSaveButton), for: .touchUpInside)
+        
         return button
     }()
     
@@ -39,16 +42,16 @@ class AddWeatherCityViewController: UIViewController {
             action: #selector(didTapCloseButton)
         )
         
-        [ textField, saveButton ]
+        [ cityNameTextField, saveButton ]
             .forEach { view.addSubview($0) }
         
-        textField.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview().inset(16)
+        cityNameTextField.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(16)
         }
         
-        saveButton.addTarget(self, action: #selector(didTapSaveButton), for: .touchUpInside)
         saveButton.snp.makeConstraints { make in
-            make.top.equalTo(textField.snp.bottom).offset(8)
+            make.top.equalTo(cityNameTextField.snp.bottom).offset(8)
             make.centerX.equalToSuperview()
         }
     }
@@ -61,6 +64,14 @@ extension AddWeatherCityViewController {
     }
     
     @objc func didTapSaveButton() {
-        
+        if let city = cityNameTextField.text {
+            let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=2f94734b59ed393c884ba97fae88e446&units=imperial")!
+            let weatherResource = Resource<Any>.init(url: weatherURL) { data in
+                return data
+            }
+            WebService.load(resource: weatherResource) { result in
+
+            }
+        }
     }
 }
