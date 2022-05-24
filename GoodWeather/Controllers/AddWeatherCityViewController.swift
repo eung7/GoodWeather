@@ -46,6 +46,7 @@ class AddWeatherCityViewController: UIViewController {
             make.top.leading.trailing.equalToSuperview().inset(16)
         }
         
+        saveButton.addTarget(self, action: #selector(didTapSaveButton), for: .touchUpInside)
         saveButton.snp.makeConstraints { make in
             make.top.equalTo(textField.snp.bottom).offset(8)
             make.centerX.equalToSuperview()
@@ -57,5 +58,9 @@ class AddWeatherCityViewController: UIViewController {
 extension AddWeatherCityViewController {
     @objc func didTapCloseButton() {
         dismiss(animated: true)
+    }
+    
+    @objc func didTapSaveButton() {
+        
     }
 }
