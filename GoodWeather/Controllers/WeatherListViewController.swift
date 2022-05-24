@@ -30,14 +30,14 @@ class WeatherListViewController: UIViewController {
             image: UIImage(systemName: "plus"),
             style: .plain,
             target: self,
-            action: #selector(didTapRightBarButton)
+            action: #selector(didTapPlusButton)
         )
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Settings",
             style: .plain,
             target: self,
-            action: #selector(didTapLeftBarButton)
+            action: #selector(didTapSettingsButton)
         )
         
         view.addSubview(tableView)
@@ -64,13 +64,12 @@ extension WeatherListViewController: UITableViewDataSource {
 }
 
 extension WeatherListViewController {
-    @objc func didTapRightBarButton() {
-        
-    }
-    
-    @objc func didTapLeftBarButton() {
+    @objc func didTapPlusButton() {
         let addVC = UINavigationController(rootViewController: AddWeatherCityViewController())
         addVC.modalPresentationStyle = .fullScreen
         present(addVC, animated: true)
+    }
+    
+    @objc func didTapSettingsButton() {
     }
 }
