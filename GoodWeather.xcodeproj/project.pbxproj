@@ -14,6 +14,8 @@
 		E5DEC416283C87B700B3D58E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5DEC414283C87B700B3D58E /* LaunchScreen.storyboard */; };
 		E5DEC41E283C8B9A00B3D58E /* AddWeatherCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DEC41D283C8B9A00B3D58E /* AddWeatherCityViewController.swift */; };
 		E5DEC421283C8BB800B3D58E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E5DEC420283C8BB800B3D58E /* SnapKit */; };
+		E5DEC424283CB9F700B3D58E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E5DEC423283CB9F700B3D58E /* SnapKit */; };
+		E5DEC426283CBABF00B3D58E /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DEC425283CBABF00B3D58E /* WeatherCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,7 @@
 		E5DEC415283C87B700B3D58E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5DEC417283C87B700B3D58E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5DEC41D283C8B9A00B3D58E /* AddWeatherCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherCityViewController.swift; sourceTree = "<group>"; };
+		E5DEC425283CBABF00B3D58E /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +36,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5DEC421283C8BB800B3D58E /* SnapKit in Frameworks */,
+				E5DEC424283CB9F700B3D58E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,13 +64,30 @@
 			children = (
 				E5DEC409283C87B500B3D58E /* AppDelegate.swift */,
 				E5DEC40B283C87B500B3D58E /* SceneDelegate.swift */,
-				E5DEC40D283C87B500B3D58E /* WeatherListViewController.swift */,
-				E5DEC41D283C8B9A00B3D58E /* AddWeatherCityViewController.swift */,
+				E5DEC427283CBAC700B3D58E /* Controllers */,
+				E5DEC428283CBACC00B3D58E /* Cells */,
 				E5DEC412283C87B700B3D58E /* Assets.xcassets */,
 				E5DEC414283C87B700B3D58E /* LaunchScreen.storyboard */,
 				E5DEC417283C87B700B3D58E /* Info.plist */,
 			);
 			path = GoodWeather;
+			sourceTree = "<group>";
+		};
+		E5DEC427283CBAC700B3D58E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E5DEC40D283C87B500B3D58E /* WeatherListViewController.swift */,
+				E5DEC41D283C8B9A00B3D58E /* AddWeatherCityViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E5DEC428283CBACC00B3D58E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E5DEC425283CBABF00B3D58E /* WeatherCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +108,7 @@
 			name = GoodWeather;
 			packageProductDependencies = (
 				E5DEC420283C8BB800B3D58E /* SnapKit */,
+				E5DEC423283CB9F700B3D58E /* SnapKit */,
 			);
 			productName = GoodWeather;
 			productReference = E5DEC406283C87B500B3D58E /* GoodWeather.app */;
@@ -118,6 +140,7 @@
 			mainGroup = E5DEC3FD283C87B500B3D58E;
 			packageReferences = (
 				E5DEC41F283C8BB800B3D58E /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E5DEC422283CB9F700B3D58E /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = E5DEC407283C87B500B3D58E /* Products */;
 			projectDirPath = "";
@@ -147,6 +170,7 @@
 			files = (
 				E5DEC40E283C87B500B3D58E /* WeatherListViewController.swift in Sources */,
 				E5DEC40A283C87B500B3D58E /* AppDelegate.swift in Sources */,
+				E5DEC426283CBABF00B3D58E /* WeatherCell.swift in Sources */,
 				E5DEC41E283C8B9A00B3D58E /* AddWeatherCityViewController.swift in Sources */,
 				E5DEC40C283C87B500B3D58E /* SceneDelegate.swift in Sources */,
 			);
@@ -366,10 +390,23 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		E5DEC422283CB9F700B3D58E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		E5DEC420283C8BB800B3D58E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5DEC41F283C8BB800B3D58E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		E5DEC423283CB9F700B3D58E /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E5DEC41F283C8BB800B3D58E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
