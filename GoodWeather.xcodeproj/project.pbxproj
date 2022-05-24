@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		E5DEC40A283C87B500B3D58E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DEC409283C87B500B3D58E /* AppDelegate.swift */; };
 		E5DEC40C283C87B500B3D58E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DEC40B283C87B500B3D58E /* SceneDelegate.swift */; };
-		E5DEC40E283C87B500B3D58E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DEC40D283C87B500B3D58E /* MainViewController.swift */; };
+		E5DEC40E283C87B500B3D58E /* WeatherListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DEC40D283C87B500B3D58E /* WeatherListViewController.swift */; };
 		E5DEC413283C87B700B3D58E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5DEC412283C87B700B3D58E /* Assets.xcassets */; };
 		E5DEC416283C87B700B3D58E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5DEC414283C87B700B3D58E /* LaunchScreen.storyboard */; };
-		E5DEC41E283C8B9A00B3D58E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DEC41D283C8B9A00B3D58E /* AddViewController.swift */; };
+		E5DEC41E283C8B9A00B3D58E /* AddWeatherCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DEC41D283C8B9A00B3D58E /* AddWeatherCityViewController.swift */; };
 		E5DEC421283C8BB800B3D58E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E5DEC420283C8BB800B3D58E /* SnapKit */; };
 /* End PBXBuildFile section */
 
@@ -20,11 +20,11 @@
 		E5DEC406283C87B500B3D58E /* GoodWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5DEC409283C87B500B3D58E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5DEC40B283C87B500B3D58E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E5DEC40D283C87B500B3D58E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E5DEC40D283C87B500B3D58E /* WeatherListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewController.swift; sourceTree = "<group>"; };
 		E5DEC412283C87B700B3D58E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5DEC415283C87B700B3D58E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5DEC417283C87B700B3D58E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E5DEC41D283C8B9A00B3D58E /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		E5DEC41D283C8B9A00B3D58E /* AddWeatherCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherCityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +60,8 @@
 			children = (
 				E5DEC409283C87B500B3D58E /* AppDelegate.swift */,
 				E5DEC40B283C87B500B3D58E /* SceneDelegate.swift */,
-				E5DEC40D283C87B500B3D58E /* MainViewController.swift */,
-				E5DEC41D283C8B9A00B3D58E /* AddViewController.swift */,
+				E5DEC40D283C87B500B3D58E /* WeatherListViewController.swift */,
+				E5DEC41D283C8B9A00B3D58E /* AddWeatherCityViewController.swift */,
 				E5DEC412283C87B700B3D58E /* Assets.xcassets */,
 				E5DEC414283C87B700B3D58E /* LaunchScreen.storyboard */,
 				E5DEC417283C87B700B3D58E /* Info.plist */,
@@ -145,9 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5DEC40E283C87B500B3D58E /* MainViewController.swift in Sources */,
+				E5DEC40E283C87B500B3D58E /* WeatherListViewController.swift in Sources */,
 				E5DEC40A283C87B500B3D58E /* AppDelegate.swift in Sources */,
-				E5DEC41E283C8B9A00B3D58E /* AddViewController.swift in Sources */,
+				E5DEC41E283C8B9A00B3D58E /* AddWeatherCityViewController.swift in Sources */,
 				E5DEC40C283C87B500B3D58E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

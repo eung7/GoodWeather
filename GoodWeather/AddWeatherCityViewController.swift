@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddViewController: UIViewController {
+class AddWeatherCityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
