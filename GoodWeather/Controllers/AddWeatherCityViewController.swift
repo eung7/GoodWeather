@@ -8,7 +8,14 @@
 import UIKit
 import SnapKit
 
+protocol AddWeatherDelegate: AnyObject {
+    func addWeatherDidSave(vm: WeatherViewModel)
+}
+
 class AddWeatherCityViewController: UIViewController {
+    var addWheaterVM = AddWeatherViewModel()
+    weak var delegate: AddWeatherDelegate?
+    
     lazy var cityNameTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .bezel
@@ -65,12 +72,9 @@ extension AddWeatherCityViewController {
     
     @objc func didTapSaveButton() {
         if let city = cityNameTextField.text {
-            let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=2f94734b59ed393c884ba97fae88e446&units=imperial")!
-            let weatherResource = Resource<Any>.init(url: weatherURL) { data in
-                return data
-            }
-            WebService.load(resource: weatherResource) { result in
-
+            addWheaterVM.addWeather(for: city) { vm in
+                self.delegate?.addWeatherDidSave(vm: vm)
+                self.dismiss(animated: true)
             }
         }
     }

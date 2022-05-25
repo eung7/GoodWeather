@@ -8,7 +8,7 @@
 import Foundation
 
 class AddWeatherViewModel {
-    func addWeather(for city: String, completion: @escaping (WeahterViewModel) -> Void) {
+    func addWeather(for city: String, completion: @escaping (WeatherViewModel) -> Void) {
         let weatherURL = Constants.Urls.urlForWeatherByCity(city: city)
         let weatherResource = Resource<WeatherResponse>(url: weatherURL) { data in
             return try? JSONDecoder().decode(WeatherResponse.self, from: data)

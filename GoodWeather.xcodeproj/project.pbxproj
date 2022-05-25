@@ -21,6 +21,7 @@
 		E5DEC431283D27B000B3D58E /* AddWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DEC430283D27B000B3D58E /* AddWeatherViewModel.swift */; };
 		E5DEC434283D282B00B3D58E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DEC433283D282B00B3D58E /* Constants.swift */; };
 		E5DEC437283D28DE00B3D58E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DEC436283D28DE00B3D58E /* String+Extensions.swift */; };
+		E5DEC439283D2B6600B3D58E /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DEC438283D2B6600B3D58E /* WeatherListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E5DEC430283D27B000B3D58E /* AddWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherViewModel.swift; sourceTree = "<group>"; };
 		E5DEC433283D282B00B3D58E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E5DEC436283D28DE00B3D58E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		E5DEC438283D2B6600B3D58E /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		E5DEC42F283D27A100B3D58E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				E5DEC438283D2B6600B3D58E /* WeatherListViewModel.swift */,
 				E5DEC430283D27B000B3D58E /* AddWeatherViewModel.swift */,
 			);
 			path = ViewModels;
@@ -226,6 +229,7 @@
 				E5DEC42B283D14F100B3D58E /* WebService.swift in Sources */,
 				E5DEC431283D27B000B3D58E /* AddWeatherViewModel.swift in Sources */,
 				E5DEC40E283C87B500B3D58E /* WeatherListViewController.swift in Sources */,
+				E5DEC439283D2B6600B3D58E /* WeatherListViewModel.swift in Sources */,
 				E5DEC40A283C87B500B3D58E /* AppDelegate.swift in Sources */,
 				E5DEC42E283D243D00B3D58E /* WeatherResponse.swift in Sources */,
 				E5DEC426283CBABF00B3D58E /* WeatherCell.swift in Sources */,
