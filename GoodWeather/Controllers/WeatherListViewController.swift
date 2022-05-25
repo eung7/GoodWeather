@@ -67,6 +67,12 @@ extension WeatherListViewController: AddWeatherDelegate {
     }
 }
 
+extension WeatherListViewController: SettingsDelegate {
+    func settingsDone(vm: SettingsViewModel) {
+        <#code#>
+    }
+}
+
 extension WeatherListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return weatherListViewModel.numberOfRows(section)
@@ -84,6 +90,7 @@ extension WeatherListViewController: UITableViewDataSource {
     }
 }
 
+// MARK: @objc Methods
 extension WeatherListViewController {
     @objc func didTapPlusButton() {
         let vc = AddWeatherCityViewController()
@@ -95,6 +102,7 @@ extension WeatherListViewController {
     
     @objc func didTapSettingsButton() {
         let vc = SettingsViewController()
+        vc.delegate = self
         let navVC = UINavigationController(rootViewController: vc)
         navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true)

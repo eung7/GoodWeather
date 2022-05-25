@@ -8,8 +8,13 @@
 import UIKit
 import SnapKit
 
+protocol SettingsDelegate: AnyObject {
+    func settingsDone(vm: SettingsViewModel)
+}
+
 class SettingsViewController: UIViewController {
     private var settingsViewModel = SettingsViewModel()
+    weak var delegate: SettingsDelegate?
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -85,6 +90,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
 // MARK: @objc methods
 extension SettingsViewController {
     @objc func didTapDoneButton() {
+        delegate?.settingsDone(vm: settingsViewModel)
         dismiss(animated: true)
     }
 }
