@@ -15,6 +15,7 @@ class SettingsViewController: UIViewController {
         let tableView = UITableView()
         tableView.register(SettingsCell.self, forCellReuseIdentifier: SettingsCell.identifier)
         tableView.dataSource = self
+        tableView.delegate = self
         
         return tableView
     }()
@@ -43,7 +44,8 @@ class SettingsViewController: UIViewController {
     }
 }
 
-extension SettingsViewController: UITableViewDataSource {
+// MARK: TableView Methods
+extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let settingsItem = settingsViewModel.units[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(
@@ -53,11 +55,30 @@ extension SettingsViewController: UITableViewDataSource {
         cell.configure(settingsItem)
         cell.setupUI()
         
+        if settingsItem == settingsViewModel.selectedUnit {
+            cell.accessoryType = .checkmark
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settingsViewModel.units.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.visibleCells.forEach { $0.accessoryType = .none }
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = .checkmark
+            let unit = Unit.allCases[indexPath.row]
+            settingsViewModel.selectedUnit = unit
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = .none
+        }
     }
 }
 
