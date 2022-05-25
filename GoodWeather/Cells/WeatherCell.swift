@@ -28,6 +28,11 @@ class WeatherCell: UITableViewCell {
         return label
     }()
     
+    func configure(_ vm: WeatherViewModel) {
+        cityNameLabel.text = vm.city
+        temperatureLabel.text = "\(vm.temperature.formatAsDegree())"
+    }
+    
     func setupUI() {
         [ cityNameLabel, temperatureLabel ]
             .forEach { contentView.addSubview($0) }

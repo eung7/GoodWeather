@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 
 class WeatherListViewController: UIViewController {
+    private var weatherListViewModel = WeatherListViewModel()
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(WeatherCell.self, forCellReuseIdentifier: WeatherCell.identifier)
@@ -60,20 +62,22 @@ class WeatherListViewController: UIViewController {
 
 extension WeatherListViewController: AddWeatherDelegate {
     func addWeatherDidSave(vm: WeatherViewModel) {
-        print(vm)
-        print("Hi!")
+        weatherListViewModel.addWeatherViewModel(vm)
+        tableView.reloadData()
     }
 }
 
 extension WeatherListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return weatherListViewModel.numberOfRows(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: WeatherCell.identifier,
             for: indexPath) as? WeatherCell else { return UITableViewCell() }
+        let weatherVM = weatherListViewModel.modelAt(indexPath.row)
+        cell.configure(weatherVM)
         cell.setupUI()
         
         return cell
