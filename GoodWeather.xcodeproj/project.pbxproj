@@ -25,6 +25,7 @@
 		E5DEC43B283DC90000B3D58E /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DEC43A283DC90000B3D58E /* Double+Extensions.swift */; };
 		E5DEC43D283DCABD00B3D58E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DEC43C283DCABD00B3D58E /* SettingsViewController.swift */; };
 		E5DEC43F283DCB0500B3D58E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DEC43E283DCB0500B3D58E /* SettingsViewModel.swift */; };
+		E5DEC441283DCEA300B3D58E /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DEC440283DCEA300B3D58E /* SettingsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		E5DEC43A283DC90000B3D58E /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		E5DEC43C283DCABD00B3D58E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E5DEC43E283DCB0500B3D58E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		E5DEC440283DCEA300B3D58E /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				E5DEC425283CBABF00B3D58E /* WeatherCell.swift */,
+				E5DEC440283DCEA300B3D58E /* SettingsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				E5DEC437283D28DE00B3D58E /* String+Extensions.swift in Sources */,
 				E5DEC434283D282B00B3D58E /* Constants.swift in Sources */,
 				E5DEC43F283DCB0500B3D58E /* SettingsViewModel.swift in Sources */,
+				E5DEC441283DCEA300B3D58E /* SettingsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

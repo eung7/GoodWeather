@@ -94,5 +94,9 @@ extension WeatherListViewController {
     }
     
     @objc func didTapSettingsButton() {
+        let vc = SettingsViewController()
+        let navVC = UINavigationController(rootViewController: vc)
+        navVC.modalPresentationStyle = .fullScreen
+        present(navVC, animated: true)
     }
 }
