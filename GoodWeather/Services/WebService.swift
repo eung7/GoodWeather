@@ -27,3 +27,13 @@ class WebService {
         .resume()
     }
 }
+
+//let resource = Resource<WeatherResponse>(url: URL(string: "https://api.openweathermap.org/data/2.5/weather?q=tokyo&appid=2f94734b59ed393c884ba97fae88e446&units=imperial")!) { data in
+//    return try? JSONDecoder().decode(WeatherResponse.self, from: data)
+//}
+//
+//WebService.load(resource: resource) { weatherResponse in
+//    if let weatherResponse = weatherResponse {
+//        print(weatherResponse)
+//    }
+//}

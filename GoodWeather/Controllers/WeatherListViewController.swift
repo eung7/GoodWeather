@@ -10,6 +10,7 @@ import SnapKit
 
 class WeatherListViewController: UIViewController {
     private var weatherListViewModel = WeatherListViewModel()
+    private var lastUnitSelection: Unit!
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -24,14 +25,9 @@ class WeatherListViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         
-        let resource = Resource<WeatherResponse>(url: URL(string: "https://api.openweathermap.org/data/2.5/weather?q=tokyo&appid=2f94734b59ed393c884ba97fae88e446&units=imperial")!) { data in
-            return try? JSONDecoder().decode(WeatherResponse.self, from: data)
-        }
-        
-        WebService.load(resource: resource) { weatherResponse in
-            if let weatherResponse = weatherResponse {
-                print(weatherResponse)
-            }
+        let userDefaults = UserDefaults.standard
+        if let value = userDefaults.value(forKey: "unit") as? String {
+            lastUnitSelection = Unit(rawValue: value)
         }
     }
     
@@ -69,7 +65,11 @@ extension WeatherListViewController: AddWeatherDelegate {
 
 extension WeatherListViewController: SettingsDelegate {
     func settingsDone(vm: SettingsViewModel) {
-        <#code#>
+        if lastUnitSelection.rawValue != vm.selectedUnit.rawValue {
+            weatherListViewModel.updateUnit(to: vm.selectedUnit)
+            tableView.reloadData()
+            lastUnitSelection = Unit(rawValue: vm.selectedUnit.rawValue)
+        }
     }
 }
 
